@@ -1,6 +1,6 @@
 package domain;
 
-public enum Tipo{
+public enum TipoPrenda {
     REMERA(Categoria.SUPERIOR),
     BUZO(Categoria.SUPERIOR),
     CAMISA_LARGA(Categoria.SUPERIOR),
@@ -20,7 +20,14 @@ public enum Tipo{
     PANUELO(Categoria.ACCESORIO),
     ANTEOJOS(Categoria.ACCESORIO);
 
-    Tipo(Categoria unaCategoria) {
+    private final Categoria categoria;
 
+    TipoPrenda(Categoria unaCategoria) {
+        this.categoria = unaCategoria;
     }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
 }

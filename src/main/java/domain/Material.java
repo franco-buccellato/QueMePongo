@@ -1,5 +1,5 @@
 package domain;
 
-public enum TelaMaterial{
+public enum Material {
     JEAN, PANA, POLAR;
 }

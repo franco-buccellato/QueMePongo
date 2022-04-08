@@ -1,34 +1,38 @@
 package domain;
 
 public class Prenda{
-    public TelaMaterial unMaterial;
-    public Tipo unTipo;
-    public Trama unaTrama;
-    public Color unColorPrincipal;
-    public Color unColorSecundario;
+    public TipoPrenda tipoPrenda;
+    public Categoria categoria;
+    public Material material;
+    public Color colorPrincipal;
+    public Color colorSecundario;
 
-    public Prenda(Tipo unTipoPrenda){
-        unTipo = unTipoPrenda;
+    public Prenda(TipoPrenda tipo, Categoria categoria, Color color)
+    {
+        if(tipo.getCategoria() == categoria) {
+            this.tipoPrenda = tipo;
+            this.categoria = categoria;
+            this.colorPrincipal = color;
+        }
     }
 
-    public void setearTrama(Trama unTramaPrenda){
-        unaTrama = unTramaPrenda;
-    }
-    //Por defecto si no se especifica es LISA
-    public void setearTrama(){
-        unaTrama = Trama.LISA;
+    public Material getMaterial() {
+        return material;
     }
 
-    public void setearMaterial(TelaMaterial unMateriaPrenda){
-        unMaterial = unMateriaPrenda;
+    public void setMaterial(Material material) {
+        this.material = material;
     }
 
-    public void setearColorPrincipal(Color unColorPrenda1){
-        unColorPrincipal = unColorPrenda1;
+    public Color getColorPrincipal() {
+        return colorPrincipal;
     }
 
-    public void setearColorSecundario(Color unColorPrenda2){
-        unColorSecundario = unColorPrenda2;
+    public Color getColorSecundario() {
+        return colorSecundario;
     }
 
+    public void setColorSecundario(Color colorSecundario) {
+        this.colorSecundario = colorSecundario;
+    }
 }
